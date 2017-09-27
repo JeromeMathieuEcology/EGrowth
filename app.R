@@ -1,7 +1,6 @@
 # 26 09 2107
 # author : jerome mathieu
 
-#setwd("D:\\Dropbox\\en_cours\\recherche\\projets\\THV\\app\\ok")
 rm(list=ls(all=TRUE))
 
 library(shiny)
@@ -26,8 +25,7 @@ source("fit_loess.r", local = TRUE)
 
 ui <- fluidPage(
   tags$head(
-    #tags$style(type='text/css', ".selectize-input { font-size: 12px; line-height: 10px;} .selectize-dropdown { font-size: 12px; line-height: 10px; }"),
-    tags$link(rel = "stylesheet", type = "text/css", href = "sandstone.css")
+      tags$link(rel = "stylesheet", type = "text/css", href = "sandstone.css")
   ),
   
   h3("EGrowth"),
@@ -109,10 +107,7 @@ server <- function(input, output, session) {
       
       plot_output_list <- lapply(input_n, function(i) {
         
-          #plotname <- paste("plot", i, sep="")
-
-          #plot_output_object <- plotOutput(plotname)
-          
+         
           plot_output_object <- renderPlotly({
              p <- ggplot(dfCompCurves()[dfCompCurves()[,input$facet_row]==i,],            
                     aes(x=time,y=bm,group=CURVE_ID,label=pH,label2=REF_ID,label3=treatment_type,label4=treatment_level)) +
