@@ -1,2 +1,2 @@
 # EGrowth
-A global databae of earthworm body growth curves
+A global database of earthworm body growth curves
