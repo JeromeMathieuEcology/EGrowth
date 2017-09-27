@@ -18,7 +18,7 @@ Type the folowing code in the R Console:
 ```
 library(RCurl)
 
-url_curves	<- getURL("https://raw.githubusercontent.com/JeromeMathieuEcology/EGrowth/master/curves.txt")
+url_curves <- getURL("https://raw.githubusercontent.com/JeromeMathieuEcology/EGrowth/master/curves.txt")  
 url_mds <- getURL("https://raw.githubusercontent.com/JeromeMathieuEcology/EGrowth/master/curves_md.csv")
 url_refs <- getURL("https://raw.githubusercontent.com/JeromeMathieuEcology/EGrowth/master/references.csv")
 
