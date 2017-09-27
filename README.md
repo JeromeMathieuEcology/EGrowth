@@ -1,8 +1,8 @@
 # EGrowth
 A global database of earthworm body growth curves
 
-If you want to run the App from R, you need to have installed the following libraries:
-ggplot2,leafmap,plotly and maptools.
+If you want to run the App from R, you need to have installed the following libraries:  
+ggplot2, leafmap, plotly and maptools.
 
 Then type the folowing code in the R Console:
 ``` 
