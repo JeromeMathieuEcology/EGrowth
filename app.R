@@ -8,6 +8,7 @@ library(shiny)
 library(leaflet)
 library(maptools)
 library(plotly)
+library(ggplot2)
 #library(ggthemes)
 
 data(wrld_simpl)
@@ -51,11 +52,8 @@ ui <- fluidPage(
 
 server <- function(input, output, session) {
   
-  growth <- read.table("D:\\Dropbox\\en_cours\\recherche\\projets\\THV\\data\\EGrowth\\curves_17.09.25.txt",h=T,na.strings="na")
-  EGrowth_metadata <- read.csv2("D:\\Dropbox\\en_cours\\recherche\\projets\\THV\\data\\EGrowth\\curves_md_17.09.25.csv",h=T,dec=".",na.strings="na",sep=",")
-  
-  # growth <- read.table("curves.txt",h=T,na.strings="na")
-  #EGrowth_metadata <- read.csv2("curves_md.csv",h=T,dec=".",na.strings="na",sep=",")
+ growth <- read.table("curves.txt",h=T,na.strings="na")
+ EGrowth_metadata <- read.csv2("curves_md.csv",h=T,dec=".",na.strings="na",sep=",")
   
   EGrowth <- merge(growth,EGrowth_metadata,by="CURVE_ID")
   
