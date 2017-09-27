@@ -27,7 +27,7 @@ growth <- read.csv2(text = url_curves, h = T, na.strings = "na",sep = "\t")
 EGrowth_metadata  <- read.csv2(text=url_mds, h = T,na.strings = "na", sep = "\t", dec = ".")
 EGrowth_references <- read.csv2(text=url_refs, h = T,na.strings = "na", sep = "\t", dec = ".")
 ``` 
-Then check the User Guide to use the database.
+Then check the User Guide of the database.
 
 Enjoy!
 Jerome
