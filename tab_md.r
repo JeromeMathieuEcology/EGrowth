@@ -29,18 +29,18 @@ tabMD <- tabPanel("Metadata",
               br(),
               hr(),
               fluidRow(
-                splitLayout(cellWidths = c("10%", "40%","50%"),
-                  h5(""),
+                splitLayout(cellWidths = c("33%", "33%","33%"),
                   h5(strong("Number of Species selected")),
-                  h5(strong("Number of corresponding curves"))
+                  h5(strong("Number of corresponding curves")),
+                  h5(strong("Number of body mass data points"))
                 )
               ),
 
               fluidRow(
-                splitLayout(cellWidths = c("10%", "40%","50%"),
-                  h5(""),
+                splitLayout(cellWidths = c("33%", "33%","33%"),
                   textOutput("NbSp"),
-                  textOutput("NbCurves")
+                  textOutput("NbCurves"),
+                  textOutput("NbPoints")
                 )
               ),
               hr(),
