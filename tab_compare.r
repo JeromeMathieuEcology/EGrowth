@@ -10,10 +10,10 @@ tabCompare <- tabPanel("Compare Curves",
     	        selectInput("ColorCurve", "Colour of the curves",choices=c("temperature","pH"),selected="temperature" ),
 
         	    sliderInput('plotHeight', 'Height of plots (in pixels)', 
-                   min = 100, max = 800, value = 350),
+                   min = 100, max = 800, value = 400),
 
         	    sliderInput('plotWidth', 'Width of plots (in pixels)', 
-                   min = 100, max = 1000, value = 500)  	   
+                   min = 100, max = 1000, value = 600)  	   
     	    ),
 
           mainPanel(
