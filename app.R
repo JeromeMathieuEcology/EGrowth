@@ -1,12 +1,11 @@
 # 26 09 2107
 # author : jerome mathieu
 
-rm(list=ls(all=TRUE))
-
 library(shiny)
 library(leaflet)
 library(maptools)
 library(plotly)
+library(leaflet)
 library(ggplot2)
 #library(ggthemes)
 
@@ -25,7 +24,7 @@ source("fit_loess.r", local = TRUE)
 
 ui <- fluidPage(
   tags$head(
-      tags$link(rel = "stylesheet", type = "text/css", href = "sandstone.css")
+    tags$link(rel = "stylesheet", type = "text/css", href = "sandstone.css")
   ),
   
   h3("EGrowth"),
@@ -50,8 +49,8 @@ ui <- fluidPage(
 
 server <- function(input, output, session) {
   
- growth <- read.table("curves.txt",h=T,na.strings="na")
- EGrowth_metadata <- read.csv2("curves_md.csv",h=T,dec=".",na.strings="na",sep=",")
+  growth <- read.table("curves.txt",h=T,na.strings="na")
+  EGrowth_metadata <- read.csv2("curves_md.csv",h=T,dec=".",na.strings="na",sep=",")
   
   EGrowth <- merge(growth,EGrowth_metadata,by="CURVE_ID")
   
@@ -107,7 +106,10 @@ server <- function(input, output, session) {
       
       plot_output_list <- lapply(input_n, function(i) {
         
-         
+          #plotname <- paste("plot", i, sep="")
+
+          #plot_output_object <- plotOutput(plotname)
+          
           plot_output_object <- renderPlotly({
              p <- ggplot(dfCompCurves()[dfCompCurves()[,input$facet_row]==i,],            
                     aes(x=time,y=bm,group=CURVE_ID,label=pH,label2=REF_ID,label3=treatment_type,label4=treatment_level)) +
@@ -157,6 +159,9 @@ server <- function(input, output, session) {
                       filteredMD_CY()$temperature <= input$TemperatureMD[2]|is.na(filteredMD_CY()$temperature) ,]
   })
   
+  #nbCurves <- reactive ({  })
+  
+  
   tableSp <- reactive({ 
     tableSp <- as.data.frame(apply(table(filteredMD_CYTTT()$species,filteredMD_CYTTT()$CURVE_ID),1,sum))
     tableSp <- data.frame(row.names(tableSp),tableSp)
@@ -169,18 +174,17 @@ server <- function(input, output, session) {
     names(tableTrt) <- c("Treatment","Number of curves")
     return(tableTrt)
   })
+
   
-  
-  
-  
-  # ouputs --
+  # ouputs --------------
   output$TableTrtType <- renderTable(tableTrt())
   output$NbCurves <- renderText(dim(filteredMD_CYTTT())[1])
   output$NbSp <- renderText(nlevels(factor(filteredMD_CYTTT()$species)))
   output$trt <- renderText(list_trt_type)
   output$TableNsp <- renderTable(tableSp())
-  
-  
+  output$NbPoints <- renderText(nrow(growth[growth$CURVE_ID %in% filteredMD_CYTTT()$CURVE_ID,]))
+
+    
   # leaflet map -------------------------
   output$mymap <- renderLeaflet({
     leaflet() %>%
@@ -252,10 +256,7 @@ server <- function(input, output, session) {
       get_plot_output_list <- function(input_n) {    
         
         plot_output_list <- lapply(input_n, function(i) {
-          
-          #plotname <- paste("plot", i, sep="")
-          #plot_output_object <- plotOutput(plotname, height = 280, width = 250)
-          
+
           XX <- growth[growth$CURVE_ID==i,c("bm","time")]
           YY <- fit_loess(XX)
           
