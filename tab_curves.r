@@ -1,4 +1,4 @@
-tabCurves <- tabPanel("Explore Growth Curves",
+tabCurves <- tabPanel("Explore Curves",
 
       sidebarLayout(
           sidebarPanel(h5(""),width = 3,

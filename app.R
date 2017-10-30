@@ -20,6 +20,8 @@ source("tab_curves.r", local = TRUE)
 source("tab_help.r", local = TRUE)
 source("tab_export.r", local = TRUE)
 source("tab_compare.r", local = TRUE)
+source("tab_contrib.r", local = TRUE)
+source("tab_cite.r", local = TRUE)
 
 source("fit_loess.r", local = TRUE)
 
@@ -41,7 +43,9 @@ ui <- fluidPage(
     tabCompare,
     tabCurves, 
     tabExport,  	
-    tabHelp
+    tabHelp,
+    tabContrib,
+    tabCite
   )
 )
 

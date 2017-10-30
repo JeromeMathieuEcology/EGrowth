@@ -5,7 +5,7 @@ tabHelp <- tabPanel("Help",
 
   column(width = 8,offset = 1, 
     br(),
-    h5("In this App you will find different panels to explore the database:"),
+    h5("In this App you will find different panels to explore the database"),
     br(),
 
    strong("Panel 'Metadata'"),
@@ -37,7 +37,7 @@ tabHelp <- tabPanel("Help",
       br(),
 
 
-    strong("Panel 'Explore growth curves'"), 
+    strong("Panel 'Explore curves'"), 
       tags$ul(    
           h5("This panel allows you to explore individual growth curves
             -- biomass of individuals at several dates -- 
@@ -68,7 +68,7 @@ tabHelp <- tabPanel("Help",
 
       strong("Panel 'Export data'"),
       tags$ul(
-          h5("This tab allows you to export the curves selected in the Explore growth curves panel")
+          h5("This tab allows you to export the curves selected in the Explore curves panel")
       ),
 
       br(),
