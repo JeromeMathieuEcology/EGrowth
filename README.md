@@ -24,8 +24,8 @@ url_refs <- getURL("https://raw.githubusercontent.com/JeromeMathieuEcology/EGrow
 
 
 growth <- read.csv2(text = url_curves, h = T, na.strings = "na",sep = "\t")
-EGrowth_metadata  <- read.csv2(text=url_mds, h = T,na.strings = "na", sep = "\t", dec = ".")
-EGrowth_references <- read.csv2(text=url_refs, h = T,na.strings = "na", sep = "\t", dec = ".")
+EGrowth_metadata  <- read.csv2(text=url_mds, h = T,na.strings = "na", sep = ",", dec = ".")
+EGrowth_references <- read.csv2(text=url_refs, h = T,na.strings = "na", sep = ",", dec = ".")
 ``` 
 Then check the User Guide of the database.
 

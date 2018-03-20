@@ -54,7 +54,7 @@ ui <- fluidPage(
 
 server <- function(input, output, session) {
   
-  growth <- read.table("curves.txt",h=T,na.strings="na")
+  growth <- read.csv2("curves.txt",h=T,na.strings="na",sep="\t")
   EGrowth_metadata <- read.csv2("curves_md.csv",h=T,dec=".",na.strings="na",sep=",")
   
   EGrowth <- merge(growth,EGrowth_metadata,by="CURVE_ID")
