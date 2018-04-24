@@ -1,0 +1,12 @@
+name: egrowth
+title: EGrowth
+username:
+account: iees-paris
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 329011
+bundleId: 1335265
+url: https://iees-paris.shinyapps.io/egrowth/
+when: 1524560850.81304
+asMultiple: FALSE
+asStatic: FALSE

@@ -20,7 +20,7 @@ tabHelp <- tabPanel("Help",
           
           h5("On the right, you will find three plots on the first row. The are histogramms of the year
            of publication, temperature and ph of the substrate in the selected growth curves"),
-          h5("Second line tells the number of species selected, and the nubmer of curves selected"),
+          h5("Second line tells the number of species selected, and the number of curves selected"),
           h5("Last, you will find a map of the location of the specimens used to produce the curves. 
             You can zoom and pan the map."),
           h5("You can also click on the markers to get information on the curves")
@@ -45,22 +45,22 @@ tabHelp <- tabPanel("Help",
 
           br(),
           h5("You can select the growth curves either by selecting"),
-          h5("- the climate from which the individuals come from"),
-          h5("- the species studied (mandatory)"),
-          h5("- the type of treatment that was studied"),
+          h5("- The climate from which the individuals come from"),
+          h5("- The species studied (mandatory)"),
+          h5("- The type of treatment that was studied"),
           br(),
           h5("Please note that when there are many curves selected, typically above 10,
             it will take time for the application to draw the plots. 
             Please be patient and do not click on any buttons, otherwise it will make it worse!"),
           br(),
-          h5("- The panel shows the following information:"),
+          h5("The panel shows the following information:"),
           h5("- The number of growth curves corresponding to you criteria"),
-          h5("- the species that you selected"),
-          h5("- the left column shows the raw data, with a loess fit in red. The ID of the curve is mentionned,
+          h5("- The species that you selected"),
+          h5("- The left column shows the raw data, with a loess fit in red. The ID of the curve is mentionned,
            as well as the treatment type"),
-          h5("- the right column shows a map with the origin of the individuals used to produce the curve
+          h5("- The right column shows a map with the origin of the individuals used to produce the curve
            (this is not necessary were the exeperiment was performed)"),
-          h5("- below the map, environmental conditions used to produce the curve, 
+          h5("- Below the map, environmental conditions used to produce the curve, 
             and the source of the curve, are summarized.")
       ),
       br(),
@@ -70,16 +70,36 @@ tabHelp <- tabPanel("Help",
       tags$ul(
           h5("This tab allows you to export the curves selected in the Explore curves panel")
       ),
-
       br(),
+
       strong("WARNINGS"),
+       tags$ul(
+        h5(strong("- The 'time' axis should not be interpreted as 'age'."),"
+          The age at time = 0 varies from curve to curve and rarely is the day of birth." ),
+        h5(strong("- Species names"),"should be interpreted in ligth of recent advances on earthworm taxonomy,
+          particularly regarding", strong("cryptic species")," in species complexes such as",tags$em("A. caliginosa"),".")
+        ),
+      br(),
+   
+      strong("USING THE DATABASE FROM R"),
       tags$ul(
-      h5(strong("- The 'time' axis should not be interpreted as 'age'."),"
-      The age at time = 0 varies from curve to curve and rarely is the day of birth." ),
-      h5(strong("- Species names"),"should be interpreted in ligth of recent advances on earthworm taxonomy,
-       particularly regarding", strong("cryptic species")," in species complexes such as",tags$em("A. caliginosa"),".")
+        h5("This database can also be browsed from the R console. I actually recommend  to browse the database this way"),
+        h5("- For this you need to install the shiny package"),
+        code("if (!require('shiny')) install.packages('shiny')"),
+        h5("- Then load the package"),
+        code("library(shiny)"),
+        h5("- Then type:"),
+        code("runGitHub('EGrowth', 'JeromeMathieuEcology')"),
+        h5("The GUI should open in you default browser")
       ),
-      br()
+      br(),
+   
+
+      strong("Code of the Application"), 
+      tags$ul(    
+          h5("The code of this application is available on Zenodo:", a("https://zenodo.org/record/1039952")),
+          br()
+      )
     ) 
   
  )

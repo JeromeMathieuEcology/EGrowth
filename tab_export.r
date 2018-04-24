@@ -9,7 +9,7 @@ tabExport <- tabPanel("Export Data",
 	# ),
 
     br(),
-    h5("Export data selected in Explore Growth Curve Tab."),
+    h5("Export data selected in the 'Explore Curves' Tab."),
 	  splitLayout(cellWidths = c("25%", "5%","70%"),
       downloadButton("DLselectedCurves","Growth Curves (.csv)"),
       h5(" "),

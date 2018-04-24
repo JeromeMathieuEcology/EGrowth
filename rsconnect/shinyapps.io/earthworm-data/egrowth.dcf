@@ -1,0 +1,12 @@
+name: egrowth
+title: EGrowth
+username:
+account: earthworm-data
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 208832
+bundleId: 1335212
+url: https://earthworm-data.shinyapps.io/egrowth/
+when: 1524559000.96666
+asMultiple: FALSE
+asStatic: FALSE
